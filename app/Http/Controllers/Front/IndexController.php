@@ -17,16 +17,16 @@ class IndexController extends Controller
         // Get New Arrival Products
         $newProducts = Product::with(['brand','images'])->where('status',1)->orderBy('id','Desc')->limit(8)->get()->toArray();
 
-        // Get Best Seller Products
-        $bestSellers = Product::with(['brand','images'])->where(['is_bestseller'=>'Yes','status'=>1])->inRandomOrder()->limit(4)->get()->toArray();
+        // // Get Best Seller Products
+        // $bestSellers = Product::with(['brand','images'])->where(['is_bestseller'=>'Yes','status'=>1])->inRandomOrder()->limit(4)->get()->toArray();
 
-        //Get Discounted Products
-        $discountedProducts = Product::with(['brand','images'])->where('product_discount','>',0)->where('status',1)->inRandomOrder()->limit(4)->get()->toArray();
-        // Get Featured Products
-        $featuredProducts = Product::with(['brand','images'])->where(['is_featured'=>'Yes','status'=>1])->inRandomOrder()->limit(8)->get()->toArray();
+        // //Get Discounted Products
+        // $discountedProducts = Product::with(['brand','images'])->where('product_discount','>',0)->where('status',1)->inRandomOrder()->limit(4)->get()->toArray();
+        // // Get Featured Products
+        // $featuredProducts = Product::with(['brand','images'])->where(['is_featured'=>'Yes','status'=>1])->inRandomOrder()->limit(8)->get()->toArray();
 
         // dd($newProducts);
-        return view('front.index')->with(compact('homeSliderBanners','homeFixBanners','newProducts','bestSellers','discountedProducts','featuredProducts'));
+        return view('front.index')->with(compact('homeSliderBanners','homeFixBanners'));
 
     }
 

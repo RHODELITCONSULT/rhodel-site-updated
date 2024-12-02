@@ -15,7 +15,7 @@ class HomeController extends Controller
     //Todo => Client home page
     public function index(){
         try{
-            return view("front.Pages.home");
+            return view("Frontend.Pages.home");
         }catch(\Exception $e){
             Log::error("Error: ".$e->getMessage());
             return redirect()->back()->with('error', $e->getMessage());

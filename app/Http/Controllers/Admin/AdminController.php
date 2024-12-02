@@ -13,7 +13,7 @@ use App\Models\Product;
 use App\Models\Admin;
 use App\Models\Brand;
 use App\Models\User;
-use App\Models\Rating;
+//use App\Models\Rating;
 //use Auth;
 //use Validator;
 use Hash;
