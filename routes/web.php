@@ -6,8 +6,8 @@ use App\Http\Controllers\Admin\ProductsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Category;
 use App\Http\Controllers\Front\IndexController;
-//use App\Http\Controllers\Front\AboutUsController;
-//use App\Http\Controllers\Front\ContactUsController;
+use App\Http\Controllers\Front\AboutUsController;
+use App\Http\Controllers\Front\ContactUsController;
 
 //* Client Controllers
 // use App\Http\Controllers\Client\HomeController;
