@@ -9,3 +9,4 @@ class CmsPage extends Model
 {
     use HasFactory;
 }
+

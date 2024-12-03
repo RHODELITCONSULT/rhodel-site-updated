@@ -574,3 +574,9 @@
 .footer .copyright a:hover {
     color: var(--primary);
 }
+
+.whatsapp-chat{
+    bottom:10px;
+    left:10px;
+    position: fixed;
+}

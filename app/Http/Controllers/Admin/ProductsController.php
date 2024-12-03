@@ -88,7 +88,7 @@ class ProductsController extends Controller
             $rules = [
                 'category_id' => 'required',
                 'product_name' => 'required|regex:/^[\pL\s-]+$/u|max:200',
-                'product_code' => 'required|regex:/^[\w-]*$/|max:30',
+               // 'product_code' => 'required|regex:/^[\w-]*$/|max:30',
                 
             ];
 
@@ -160,9 +160,9 @@ class ProductsController extends Controller
                     $smallImagePath = 'front/images/products/small/'.$imageName;
 
                     // Upload the large, Medium and Small after Resize
-                    Image::make($image_temp)->resize(1040,1200)->save($largeImagePath);
-                    Image::make($image_temp)->resize(520,600)->save($mediumImagePath);
-                    Image::make($image_temp)->resize(260,300)->save($smallImagePath);
+                    Image::make($image_temp)->resize(550,400)->save($largeImagePath);
+                    Image::make($image_temp)->resize(500,400)->save($mediumImagePath);
+                    Image::make($image_temp)->resize(600,400)->save($smallImagePath);
 
                     // Insert Image Name in products_images table
                     $image = new ProductsImage;
