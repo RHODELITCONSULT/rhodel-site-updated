@@ -17,7 +17,7 @@ class ContactUsController extends Controller
 {
     public function contactUs()
     {
-        return view('Frontend.pages.contact');
+        return view('front.pages.contact');
         // if ($request->ajax()) {
         //     $data = $request->all();
         //     $getContactUs = ContactUs::where('email', $data['email'], 'subject', $data['subject'], 'message', $data['message'])->count();

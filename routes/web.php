@@ -6,14 +6,8 @@ use App\Http\Controllers\Admin\ProductsController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Category;
 use App\Http\Controllers\Front\IndexController;
-use App\Http\Controllers\Front\AboutUsController;
 use App\Http\Controllers\Front\ContactUsController;
-
-//* Client Controllers
-// use App\Http\Controllers\Client\HomeController;
-// use App\Http\Controllers\Front\CareerController;
-// use App\Http\Controllers\Front\ProjectsController;
-// use App\Http\Controllers\Front\ServicesController;
+use App\Http\Controllers\Front\AboutUsController;
 use App\Http\Middleware\AdminMiddleware;
 
 /*
@@ -27,34 +21,19 @@ use App\Http\Middleware\AdminMiddleware;
 |
  */
 // Todo => Guest Routes
-// Route::get("/home", [HomeController::class, 'index'])->name("home.index");
-// Route::get('/', [HomeController::class, 'index'])->name("home");
-
-// Route::get("about", [AboutUsController::class, 'about_us'])->name("about-us");
-// Route::get("projects", [ProjectsController::class, 'projects'])->name("projects");
-
-// Route::prefix("/services")->group(function(){
-//     Route::get("/solar-energy", [ServicesController::class,'solar_energy'])->name('solar-energy');
-//     Route::get("/it-service", [ServicesController::class,'it_services'])->name('it-service');
-//     Route::get("/software-service", [ServicesController::class,'software_service'])->name('software-service');
-//     Route::get("/electric-fence", [ServicesController::class,'electric_fence'])->name('electric-fence');
-//     Route::get("/cctv-service", [ServicesController::class, 'cctv_service'])->name('cctv-service');
-//     Route::get("/ac-service", [ServicesController::class,'ac_service'])->name('ac-service');
-
 Route::get('/', function (){
 return view('welcome');
 });
 
 Route::namespace('App\Http\Controllers\Front')->group(function() {
     Route::get('/', [IndexController::class,'index']);
+
+    // TODO=> CONTACT US PAGE
+    Route::get('/contact-us', [ContactUsController::class, 'contactUs'])->name('contact-us');
+    Route::get('/about-us', [AboutUsController::class, 'aboutUs'])->name('about-us');
+
+    
 });
-
-
-// Route::get("/contact-us",[ContactUsController::class,'contactUs'])->name("contact-us");
-
-// Route::get('career', [CareerController::class, 'career'])->name('career');
-
-
 
 Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function () {
     Route::match(['get', 'post'], 'login', 'AdminController@login');

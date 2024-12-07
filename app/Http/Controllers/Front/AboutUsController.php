@@ -19,7 +19,7 @@ class AboutUsController extends Controller
     public function about_us(){
         try{
             // $about = About::query()->where("info_type","about-us")->first();
-            return view('Frontend.pages.about');
+            return view('front.pages.about');
         }catch(\Exception $e){
             Log::error("ABOUT_US_ERROR".$e->getMessage());
             return back()->with('error_message',"Sorry, about us page not loading up at the moment");

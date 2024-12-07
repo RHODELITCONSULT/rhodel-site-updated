@@ -9,7 +9,7 @@
     <meta content="" name="description">
 
     <!-- Favicon -->
-    <link href="img/favicon.ico" rel="icon">
+    <link href="front/images/favicon.ico" rel="icon">
 
     <!-- Google Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,13 +21,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
-    <link href="{{asset('assets/Frontend/lib/animate/animate.min.css') }}" rel="stylesheet">
-    <link href="{{asset('assets/Frontend/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
-    <link href="{{asset('assets/Frontend/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
+    <link href="{{ url('front/lib/animate/animate.min.css') }}" rel="stylesheet">
+    <link href="{{ url('front/lib/owlcarousel/assets/owl.carousel.min.css') }}" rel="stylesheet">
+    <link href="{{ url('front/lib/lightbox/css/lightbox.min.css') }}" rel="stylesheet">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link href="{{asset('assets/Frontend/css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url('front/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Template Stylesheet -->
-    <link href="{{asset('assets/Frontend/css/style.css') }}" rel="stylesheet">
+    <link href="{{ url('front/css/style.css') }}" rel="stylesheet">
 </head>

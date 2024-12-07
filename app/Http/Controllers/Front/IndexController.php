@@ -9,11 +9,12 @@ use App\Models\Product;
 class IndexController extends Controller
 {
     public function index(){
+        
         // Get Home Page Slider Banners
         $homeSliderBanners = Banner::where('type','Slider')->where('status',1)->orderBy('sort','ASC')->get()->toArray();
 
         // Get Home Page Fix Banners
-         $homeFixBanners = Banner::where('type','Fix')->where('status',1)->orderBy('sort','ASC')->get()->toArray();
+        $homeFixBanners = Banner::where('type','Fix')->where('status',1)->orderBy('sort','ASC')->get()->toArray();
         // Get New Arrival Products
         $newProducts = Product::with(['brand','images'])->where('status',1)->orderBy('id','Desc')->limit(12)->get()->toArray();
         //   dd($newProducts);
