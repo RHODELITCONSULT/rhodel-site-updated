@@ -45,28 +45,34 @@
                      </div>
                  </div>
              </div>
-             <div class="col-lg-3 col-md-6">
-                 <h5 class="text-white mb-4">Newsletter</h5>
-                 <p>Dolor amet sit justo amet elitr clita ipsum elitr est.</p>
-                 <div class="position-relative mx-auto" style="max-width: 400px;">
-                     <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                     <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
-                 </div>
-             </div>
-         </div>
-     </div>
-     <div class="container">
-         <div class="copyright">
-             <div class="row">
-                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                     &copy; <a href="#">RHODEL IT CONSULT</a>, All Right Reserved.
-                 </div>
-                 <div class="col-md-6 text-center text-md-end">
+             <div class="col-lg-3 col-md-12">
+                 <form class="newsletter">
+                     <h5 class="text-white mb-4">Newsletter</h5>
+                     <p>Subscribe to the mailing list to receive updates on promotions and services.</p>
 
-                     Designed By <a href="https://rhodelitconsult.com">RHODEL IT CONSULT</a>
-                 </div>
+                     <div class="newsletter__group">
+                         <!-- <label for="newsletter"></label> -->
+                         <div class="position-relative mx-auto" style="max-width: 400px;">
+                             <input class="form-control border-0 w-100 py-4 ps-3 pe-5" type="text" placeholder="Enter your Email" name="subscriber_email" id="subscriber_email" required"">
+                             <button class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2"  type="button" onclick="addSubscriber()">SUBSCRIBE</button>
+                         </div>
+                 </form>
              </div>
          </div>
      </div>
+ </div>
+ <div class="container">
+     <div class="copyright">
+         <div class="row">
+             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                 &copy; <a href="#">RHODEL IT CONSULT</a>.  All Right Reserved. <strong>Copyright &copy; <?php echo date('Y'); ?></strong>
+             </div>
+             <div class="col-md-6 text-center text-md-end">
+
+                 Designed By <a href="https://rhodelitconsult.com">RHODEL IT CONSULT</a>
+             </div>
+         </div>
+     </div>
+ </div>
  </div>
  <!-- Footer End -->

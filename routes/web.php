@@ -32,6 +32,9 @@ Route::namespace('App\Http\Controllers\Front')->group(function() {
     Route::get('/contact-us', [ContactUsController::class, 'contactUs'])->name('contact-us');
     Route::get('/about-us', [AboutUsController::class, 'aboutUs'])->name('about-us');
 
+    // Add Subscriber Email
+    Route::post('add-subscriber-email', 'NewsletterController@addSubscriber');
+
     
 });
 
@@ -112,7 +115,6 @@ Route::prefix('/admin')->namespace('App\Http\Controllers\Admin')->group(function
         Route::get('delete-subscriber/{id?}', 'NewsletterController@deleteSubscriberStatus');
         Route::get('export-subscribers', 'NewsletterController@exportSubscribers');
 
-        // Add Subscriber Email
-        Route::post('add-subscriber-email', 'NewsletterController@addSubscriber');
+       
     });
 });

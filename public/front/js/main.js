@@ -98,3 +98,32 @@
 
 
 
+function addSubscriber(){
+	var subscriber_email = $("#subscriber_email").val();
+	// alert(subscriber_email);
+	var mailFormat = /\S+@\S+\.\S+/;
+	if (subscriber_email.match(mailFormat)) {
+
+	}else{
+		alert("Please enter valid Email!");
+		return false;
+	}
+	$.ajax({
+		headers: {
+    		'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+		},
+		type:'post',
+		url:'add-subscriber-email',
+		data:{subscriber_email:subscriber_email},
+		success:function(resp){
+			if(resp=="exists"){
+				alert("Your email already exists for Newsletter Subscription");
+			}else if(resp=="saved"){
+				alert("Thank you for Subscribing to our Newsletter");
+			}
+		},error:function(){
+			alert("Error");
+		}
+	});
+}
+

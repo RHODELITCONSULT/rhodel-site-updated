@@ -226,10 +226,6 @@
                 </li>
 
                
-
-               
-
-
                 @if (Auth::guard('admin')->user()->type == 'admin' || Session::get('page') == 'subscribers')
                     @if (Session::get('page') == 'users')
                         @php $active="active" @endphp

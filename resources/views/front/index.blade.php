@@ -143,7 +143,7 @@
                         <p><i class="fa fa-check-circle text-primary me-3"></i>Home & Business Security</p>
                         <p><i class="fa fa-check-circle text-primary me-3"></i>Renewable Energy</p>
 
-               
+
 
 
                         <a href="" class="btn btn-primary rounded-pill py-3 px-5 mt-3">Explore More</a>
@@ -271,103 +271,48 @@
         <div class="container">
             <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
                 <h6 class="text-primary">Our Projects</h6>
-                <h1 class="mb-4">Visit Our Latest Solar And Renewable Energy Projects</h1>
+                <h1 class="mb-4">Visit Our Latest Projects</h1>
             </div>
             <div class="row mt-n2 wow fadeInUp" data-wow-delay="0.3s">
                 <div class="col-12 text-center">
-                    <ul class="list-inline mb-5" id="portfolio-flters">
-                        <li class="mx-2 active" data-filter="*">All</li>
-                        <li class="mx-2" data-filter=".first">Solar Panels</li>
-                        <li class="mx-2" data-filter=".second">Wind Turbines</li>
-                        <li class="mx-2" data-filter=".third">Hydropower Plants</li>
-                    </ul>
+                    <!-- <ul class="list-inline mb-5" id="portfolio-flters">
+                        <li class="mx-2 active" data-filter="*">ALL</li>
+                        <li class="mx-2" data-filter=".first">RHODEL CRM</li>
+                        <li class="mx-2" data-filter=".first">RHODEL WAYBILL</li>
+                        <li class="mx-2" data-filter=".first">RHODEL SMS</li>
+                        <li class="mx-2" data-filter=".first">RHODEL HRMS</li>
+                        <li class="mx-2" data-filter=".first">RHODEL INVENTORY & POS</li>
+                        <li class="mx-2" data-filter=".second">IT CONSULTANCY</li>
+                        <li class="mx-2" data-filter=".second">HOME HEATING</li>
+                        <li class="mx-2" data-filter=".third">ELECTRIC FENCE</li>
+                        <li class="mx-2" data-filter=".fourth">SOLAR ENERGY</li>
+                        <li class="mx-2" data-filter=".fourth">AIR CONDITION</li>
+                        <li class="mx-2" data-filter=".fifth">CCTV SYSTEM</li>
+                    </ul> -->
                 </div>
             </div>
             <div class="row g-4 portfolio-container wow fadeInUp" data-wow-delay="0.5s">
+                @foreach($newProducts as $product)
                 <div class="col-lg-4 col-md-6 portfolio-item first">
                     <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="{{ asset('front/img/img-600x400-6.jpg')}}" alt="">
+                        @if(isset($product['images'][0]['image'])&& !empty($product['images'][0]['image']))
+                        <img class="img-fluid" src="{{ asset('front/images/products/small/'.$product['images'][0]['image']) }}" alt="">
+                        @else
+                        <img class="img-fluid" src="{{ asset('front/images/products/small/'.$product['images'][0]['image']) }}" alt="">
+                        @endif
                         <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ asset('front/img-600x400-1.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
+                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ asset('front/images/products/small/'.$product['images'][0]['image']) }}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
                             <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
                         </div>
                     </div>
                     <div class="pt-3">
-                        <p class="text-primary mb-0">Solar Panels</p>
+                        <p class="text-primary mb-0">{{ $product['product_name'] }}</p>
                         <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
+                        <h5 class="lh-base">{{ $product['description'] }}</h5>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="{{ asset('front/img/img-600x400-5.jpg')}}" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ asset('front/img-600x400-2.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Wind Turbines</p>
-                        <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item third">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="{{ asset('front/img/img-600x400-4.jpg')}}" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ asset('front/img-600x400-3.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Hydropower Plants</p>
-                        <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item first">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="{{ asset('front/img/img-600x400-3.jpg')}}" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ asset('front/img-600x400-4.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Solar Panels</p>
-                        <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item second">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="{{ asset('front/img/img-600x400-2.jpg')}}" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ asset('front/img-600x400-5.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Wind Turbines</p>
-                        <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 portfolio-item third">
-                    <div class="portfolio-img rounded overflow-hidden">
-                        <img class="img-fluid" src="{{ asset('front/img/img-600x400-1.jpg')}}" alt="">
-                        <div class="portfolio-btn">
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href="{{ asset('front/img-600x400-6.jpg')}}" data-lightbox="portfolio"><i class="fa fa-eye"></i></a>
-                            <a class="btn btn-lg-square btn-outline-light rounded-circle mx-1" href=""><i class="fa fa-link"></i></a>
-                        </div>
-                    </div>
-                    <div class="pt-3">
-                        <p class="text-primary mb-0">Hydropower Plants</p>
-                        <hr class="text-primary w-25 my-2">
-                        <h5 class="lh-base">We Are pioneers of solar & renewable energy industry</h5>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
     </div>
@@ -391,28 +336,33 @@
                         <p class="mb-4 pb-2">Ready to switch to clean, affordable energy? Get a free quote today and start saving.</p>
                         <form>
                             <div class="row g-3">
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Name" style="height: 55px;">
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                        <label for="name">Your Name</label>
+                                    </div>
                                 </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="email" class="form-control border-0" placeholder="Your Email" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <input type="text" class="form-control border-0" placeholder="Your Mobile" style="height: 55px;">
-                                </div>
-                                <div class="col-12 col-sm-6">
-                                    <select class="form-select border-0" style="height: 55px;">
-                                        <option selected>Select A Service</option>
-                                        <option value="1">Service 1</option>
-                                        <option value="2">Service 2</option>
-                                        <option value="3">Service 3</option>
-                                    </select>
+                                <div class="col-md-6">
+                                    <div class="form-floating">
+                                        <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                        <label for="email">Your Email</label>
+                                    </div>
                                 </div>
                                 <div class="col-12">
-                                    <textarea class="form-control border-0" placeholder="Special Note"></textarea>
+                                    <div class="form-floating">
+                                        <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                        <label for="subject">Subject</label>
+                                    </div>
                                 </div>
                                 <div class="col-12">
-                                    <button class="btn btn-primary rounded-pill py-3 px-5" type="submit">Submit</button>
+                                    <div class="form-floating">
+                                        <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 100px"></textarea>
+                                        <label for="message">Message</label>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button class="px-5 py-3 btn btn-primary rounded-pill" type="submit">Send
+                                        Message</button>
                                 </div>
                             </div>
                         </form>
